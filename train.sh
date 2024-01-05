@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1,2,3,4 torchrun --master_port=20335 --nproc_per_node=4 train.py --distributed=True
