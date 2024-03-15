@@ -78,10 +78,6 @@ if __name__=="__main__":
     torch.set_float32_matmul_precision('highest')
     # os.environ["CUDA_VISIBLE_DEVICES"] = "8"
     args = parse_args()
-    # args.test_model_path ='/home/wangping/codes/SAUNet/checkpoint/set11/cr_50_epoch_122.pth'
-    # args.cr = 0.50
-    # args.size = [256,256]
-    # args.meas_size = [181,181]     # [26,26], [51,51], [81,81], [128,128], [181,181]
     test_path = "test_results" + "/" + "cr_" + str(args.cr)
     if not os.path.exists(test_path):
         os.makedirs(test_path,exist_ok=True)
