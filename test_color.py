@@ -6,7 +6,7 @@ import scipy.io as scio
 import numpy as np 
 import einops
 from opts import parse_args
-from model.saunet import DUNet_plus
+from model.saunet import SAUNet
 from utils import Logger, load_checkpoint, TestData, compare_ssim, compare_psnr
 import time
 import cv2
@@ -79,14 +79,10 @@ if __name__=="__main__":
     torch.set_float32_matmul_precision('highest')
     # os.environ["CUDA_VISIBLE_DEVICES"] = "8"
     args = parse_args()
-    # args.test_weight_path = '/home/wangping/codes/SAUNet/checkpoint/cbsd68/cr_50_epoch_78.pth'
-    # args.cr = 0.50
-    # args.size = [321,481]
-    # args.meas_size = [227,340]     #[32,48] [64,96] [102,152] [161,240] [227,340]
     test_path = "test_results" + "/" + "cr_" + str(args.cr)
     if not os.path.exists(test_path):
         os.makedirs(test_path,exist_ok=True)
-    network = DUNet_plus(imag_size=args.size, 
+    network = SAUNet(imag_size=args.size, 
                     meas_size= args.meas_size,
                     img_channels=args.color_channels,
                     channels=args.channels,
@@ -100,9 +96,9 @@ if __name__=="__main__":
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     logger = Logger(log_dir)
-    if args.test_weight_path is not None:
+    if args.test_model_path is not None:
         logger.info('Loading pretrained model...')
-        pretrained_dict = torch.load(args.test_weight_path) 
+        pretrained_dict = torch.load(args.test_model_path) 
         load_checkpoint(network, pretrained_dict)
     else:
         raise ValueError('Please input a weight path for testing.')
