@@ -38,7 +38,7 @@ If you use SAUNet, please consider citing:
 
 ## Contact
 
-Should you have any question, please contact wangping@westlake.edu.cn
+If you have any question, please contact wangping@westlake.edu.cn
 
 
 **Acknowledgment:** This code is based on the [NAFNet](https://github.com/megvii-research/NAFNet). 
