@@ -4,7 +4,8 @@
 
 
 - **SAUNet is the first deep unfolding model for full image (NOT block) compressive sensing.**
-- **SAUNet has achieved SOTA performance, more importantly, it contributes to real-world image compressive sensing systems, such as single-pixel cameras.**
+- **SAUNet has achieved SOTA performance.**
+- **More importantly, SAUNet contributes to real-world image compressive sensing systems, such as single-pixel cameras.**
 
 
 <div align="center">
