@@ -27,8 +27,8 @@ def parse_args():
     parser.add_argument('--device', default='cuda', type=str)
     parser.add_argument('--iter_step', default=100, type=int)
     parser.add_argument('--test_flag', default=True, type=bool)
-    parser.add_argument('--train_data_path',type=str,default='/home/wangping/datasets/BSDS400')
-    parser.add_argument('--test_data_path',type=str,default='/home/wangping/datasets/Set11', help='gray: Set11; color: CBSD68')
+    parser.add_argument('--train_data_path',type=str,default='/data/BSD400')
+    parser.add_argument('--test_data_path',type=str,default='/data/Set11', help='gray: Set11; color: CBSD68')
     parser.add_argument('--distributed', default=False, type=bool)
     parser.add_argument('--torchcompile',nargs='?', type=str, default=None, const='inductor',
                              help="Enable compilation w/ specified backend (default: inductor).")
